@@ -8,7 +8,7 @@ RUN add-apt-repository ppa:stebbins/handbrake-releases && \
         apt-get update && \
 	apt-get -y install handbrake-cli tsp inotify-tools && \
 	apt-get clean && \
-        rm -rf /var/lib/apt/lists/* && \
+        rm -rf /var/lib/apt/lists/* 
 
 VOLUME /watch
 VOLUME /output
