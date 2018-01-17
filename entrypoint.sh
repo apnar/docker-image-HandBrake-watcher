@@ -9,7 +9,7 @@ OUTPUT_DIR="/output/"
 
 # defaults
 TASK_SPOOLER_SLOTS=2
-HANDBRAKE_SETTINGS=" -e x264 -x weightp=0:cabac=0 -b 650 --audio 1 --aencoder faac --ab 96 --mixdown stereo --gain 3 --width 720 --loose-crop --decomb --markers --turbo --two-pass --vfr --subtitle 1 --native-language eng"
+HANDBRAKE_SETTINGS=" --preset \"H.264 MKV 720p30\" --native-language eng"
 MY_FILE_TYPE="mkv"
 MY_DELETE_SOURCE="no"
 
