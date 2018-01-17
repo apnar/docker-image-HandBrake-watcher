@@ -11,7 +11,7 @@ RUN echo 'deb http://ppa.launchpad.net/stebbins/handbrake-releases/ubuntu xenial
         wget -q -O - https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt | apt-key add - && \
         echo 'deb https://mkvtoolnix.download/ubuntu/xenial/ ./' > /etc/apt/sources.list.d/bunkus.org.list && \
         apt-get update && \
-        apt-get install mkvtoolnix && \
+        apt-get -y install mkvtoolnix && \
 	apt-get clean && \
         rm -rf /var/lib/apt/lists/* 
 
