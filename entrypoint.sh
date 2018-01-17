@@ -11,18 +11,14 @@ OUTPUT_DIR="/output/"
 TASK_SPOOLER_SLOTS=2
 HANDBRAKE_SETTINGS=" -e x264 -x weightp=0:cabac=0 -b 650 --audio 1 --aencoder faac --ab 96 --mixdown stereo --gain 3 --width 720 --loose-crop --decomb --markers --turbo --two-pass --vfr --subtitle 1 --native-language eng"
 MY_FILE_TYPE="mkv"
-MY_DELETE_SOURCE="yes"
+MY_DELETE_SOURCE="no"
 
 if [ ! -z "${THREADS}" ]; then
   TASK_SPOOLER_SLOTS=${THREADS}
 fi
 
-if [ ! -z "${PRESET_NAME}" ]; then
-  HANDBRAKE_SETTINGS=" --preset ${PRESET_NAME}"
-fi
-
-if [ ! -z "${PRESET_FILE}" ]; then
-  HANDBRAKE_SETTINGS=" --preset-import-file ${PRESET_FILE} ${HANDBRAKE_SETTINGS}"
+if [ ! -z "${HANDBRAKE_OPTIONS}" ]; then
+  HANDBRAKE_SETTINGS="${HANDBRAKE_OPTIONS}"
 fi
 
 if [ ! -z "${FILE_TYPE}" ]; then
@@ -36,7 +32,7 @@ fi
 
 ###########################
 
-ts -S $TASK_SPOOLER_SLOTS
+tsp -S $TASK_SPOOLER_SLOTS
 inotifywait --recursive --monitor --quiet -e moved_to -e close_write --format '%w%f' "$WATCH_DIR" | while read -r INPUT_FILE; do
 
 FULL_FILE_NAME=$(echo ${INPUT_FILE##*/})
