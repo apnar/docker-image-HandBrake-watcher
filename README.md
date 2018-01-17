@@ -8,7 +8,7 @@ optionally be deleted after conversion.
 
 Evinronment Variables:
 
-HANDBRAKE_OPTIONS - Options passed to HandBrake-CLI (default: .....)
+HANDBRAKE_OPTIONS - Options passed to HandBrake-CLI (default: " --preset \"H.264 MKV 720p30\" --native-language eng")
 THREADS - Number of jobs to queue up simultaniously (default: 2)
 DELETE_SOURCE - Should source file be deleted after conversion (default: no)
 FILE_TYPE - File extension of output file (default: mkv)
