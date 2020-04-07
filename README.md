@@ -23,3 +23,8 @@ docker run -d \
            --env HANDBRAKE_OPTIONS="--long --list --of --options" \
            apnar/handbrake-watcher
 ```
+
+
+Default Handbrake settings borrowed from jbebel at the Pacifica Forums:
+http://www.pacificaforums.com/forum/384721-post108.html
+ 

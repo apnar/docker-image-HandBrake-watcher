@@ -18,7 +18,9 @@ RUN echo 'deb http://ppa.launchpad.net/stebbins/handbrake-releases/ubuntu xenial
 VOLUME /watch
 VOLUME /output
 
+COPY Uconnect.json /Uconnect.json
 COPY entrypoint.sh /entrypoint.sh
+COPY rip_dvd /rip_dvd
 RUN chmod 755 /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
